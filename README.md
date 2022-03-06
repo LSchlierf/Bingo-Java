@@ -15,7 +15,7 @@ I have provided an [example txt file](src/BingoParts/Sets/example.txt), which co
 - [x] Basic functionality
 - [x] Printing to console
 - [x] Console bingo game
-- [ ] Printing to PDF 
+- [ ] Printing to PDF
 - [ ] GUI for easily creating sets and printing cards
 
 ## Contact
