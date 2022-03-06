@@ -1,5 +1,7 @@
 # Code for Creating and printing Bingo cards from txt files
 
+[![wakatime](https://wakatime.com/badge/user/ee0b2e88-680b-47cf-ba7c-afd0e1637329/project/8d1fab99-001f-4cb1-a383-164c986c486e.svg)](https://wakatime.com/badge/user/ee0b2e88-680b-47cf-ba7c-afd0e1637329/project/8d1fab99-001f-4cb1-a383-164c986c486e)
+
 ## Functionality
 
 ### General
