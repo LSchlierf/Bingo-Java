@@ -11,6 +11,7 @@ You can print it to the console (looks best with a monospaced font), or use the 
 
 - [x] Basic functionality
 - [x] Printing to console
+- [x] Console bingo game
 - [ ] Printing to PDF 
 - [ ] GUI for easily creating sets and printing cards
 
