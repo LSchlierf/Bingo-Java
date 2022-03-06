@@ -29,7 +29,7 @@ public class BingoSets {
     private static List<String> getAllPaths(){
         return Arrays.stream(
             new File(BingoSets.class.getClassLoader().getResource("BingoParts/Sets").getPath()).listFiles()
-            ).map(f -> f.getAbsolutePath()).toList();
+            ).filter(f -> !f.getName().isBlank()).map(f -> f.getAbsolutePath()).toList();
     }
 
     /**
@@ -37,7 +37,7 @@ public class BingoSets {
      * @return List of all BingoSet names
      */
     public static List<String> getAllNames(){
-        return getAllPaths().stream().map(s -> new File(s).getName().split("\\.")[0]).toList();
+        return getAllPaths().stream().map(s -> new File(s).getName().split("\\.")[0]).filter(s -> !s.isBlank()).toList();
     }
 
     /**
