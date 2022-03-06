@@ -1,6 +1,7 @@
 package ConsoleGame;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 import BingoParts.*;
 
@@ -16,17 +17,15 @@ public class ConsoleGame {
         for(String n : BingoSets.getAllNames()){
             System.out.println(++i + ": " + n);
         }
-        try {
-            chosen = System.in.read() - 49;
-            System.in.skip(System.in.available());
+        try(Scanner scan = new Scanner(System.in)) {
+            chosen = scan.nextInt();
             while(chosen >= BingoSets.getAllNames().size() || chosen < 0){
                 System.out.println("\nChoose one of the available sets:\n");
                 i = 0;
                 for(String n : BingoSets.getAllNames()){
                     System.out.println(++i + ": " + n);
                 }
-                chosen = System.in.read() - 49;
-                System.in.skip(System.in.available());
+                chosen = scan.nextInt();
             }
             playingCard = BingoCard.createFromSet(BingoSets.getAllNames().get(chosen), 3);
             System.out.println("\nYou chose: " + BingoSets.getAllNames().get(chosen));
@@ -34,11 +33,9 @@ public class ConsoleGame {
                 System.out.println(playingCard.toConsoleOutput());
                 System.out.println("Select the Field you want to mark off:");
                 System.out.println("X: ");
-                int x = System.in.read() - 48;
-                System.in.skip(System.in.available());
+                int x = scan.nextInt();
                 System.out.println("Y: ");
-                int y = System. in.read() - 48;
-                System.in.skip(System.in.available());
+                int y = scan.nextInt();
                 if(x < 1 || y < 1 || x > playingCard.getSize() || y > playingCard.getSize()){
                     System.out.println("Please select a value between 1 and " + playingCard.getSize());
                     continue;
