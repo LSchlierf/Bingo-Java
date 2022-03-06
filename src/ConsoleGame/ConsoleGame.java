@@ -21,7 +21,7 @@ public class ConsoleGame {
             System.out.println(++i + ": " + n);
         }
         try(Scanner scan = new Scanner(System.in)) {
-            chosen = scan.nextInt();
+            chosen = scan.nextInt() - 1;
             while(chosen >= BingoSets.getAllNames().size() || chosen < 0){
                 System.out.println("\nChoose one of the available sets:\n");
                 i = 0;
