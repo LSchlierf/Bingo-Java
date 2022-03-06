@@ -1,4 +1,4 @@
-# Code for Creating and printing Bingo cards form txt files
+# Code for Creating and printing Bingo cards from txt files
 
 ## Functionality
 
