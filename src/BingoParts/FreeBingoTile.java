@@ -2,6 +2,7 @@ package BingoParts;
 
 /**
  * This represents a BingoField that is always marked off.
+ * @author Lucas Schlierf
  */
 public class FreeBingoTile extends BingoTile {
 

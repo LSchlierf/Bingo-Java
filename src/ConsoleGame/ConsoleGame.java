@@ -5,6 +5,9 @@ import java.util.Scanner;
 
 import BingoParts.*;
 
+/**
+ * @author Lucas Schlierf
+ */
 public class ConsoleGame {
     /**
      * Launches a simple console version of a bingo game. You can mark off fields as prompted.

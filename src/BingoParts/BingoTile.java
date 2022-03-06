@@ -2,6 +2,7 @@ package BingoParts;
 
 /**
  * This represents a single field on a BingoCard that can be marked off as solved.
+ * @author Lucas Schlierf
  */
 public class BingoTile {
     private String text;

@@ -2,6 +2,9 @@ package BingoParts;
 
 import java.util.Arrays;
 
+/**
+ * @author Lucas Schlierf
+ */
 public class Printing { //TODO: add printing support to pdf.
 
     /**

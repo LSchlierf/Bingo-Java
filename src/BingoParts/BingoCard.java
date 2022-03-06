@@ -8,6 +8,7 @@ import java.util.Random;
 
 /**
  * This represents a playing card with a field of BingoTiles that can be marked off.
+ * @author Lucas Schlierf
  */
 public class BingoCard {
     private BingoTile[][] tiles;

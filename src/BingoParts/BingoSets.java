@@ -13,6 +13,7 @@ import java.util.List;
 
 /**
  * This class handles storing and fetching BingoSets to and from storage. The exact location is /bin/BingoParts/Sets/
+ * @author Lucas Schlierf
  */
 public class BingoSets {
     
