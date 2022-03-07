@@ -16,7 +16,7 @@ You can use the main method in [ConsoleGame.java](src/ConsoleGame/ConsoleGame.ja
 ### Printing
 
 In the class [Printing.java](src/BingoParts/Printing.java) there are three methods for creating PDFs from either a specified Bingo Card or newly created ones. The generated PFDs will be placed in the compiled counterpart to [PrintOutput](src/BingoParts/PrintOutput), in the folder "bin/BingoParts/PrintOutput". I might change this locatioin in the future, since this folder is cleaned upon exit by most IDEs.  
-The PDF generation utilizes the [PDFBox library by apache commons](https://pdfbox.apache.org/).
+The PDF generation utilizes the [PDFBox library by Apache](https://pdfbox.apache.org/).
 
 ## Roadmap
 
