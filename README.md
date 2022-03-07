@@ -6,16 +6,24 @@
 
 ### General
 
-With this Code, you can create and print Bingo Cards from txt files. As soon as you place a txt file in [the corresponding folder](src/BingoParts/Sets), you can create a randomized BingoCard from the entries in the file.  
-You can print it to the console (looks best with a monospaced font), or use the main method in [ConsoleGame.java](src/ConsoleGame/ConsoleGame.java) to automatically create a set and mark off the fields.  
-I have provided an [example txt file](src/BingoParts/Sets/example.txt), which contains numbers from 1 to 30. This is just to demonstrate the functionality; the actual entries can be whatever you want, including funny events that might happen.  
+This code allows you to create adn Print Bingo cards from txt files. To create a Bingo Card, the code uses the entries form the txt files in the [corresponding folder](src/BingoParts/Sets). In there, you will find an [example txt file](src/BingoParts/Sets/example.txt) for demonstration purposes. It contains the numbers 1 through 30, however the actual entries can be anything you want, including events that might happen.  
+I also provided two ways to mark them off:
+
+### ConsoleGame
+
+You can use the main method in [ConsoleGame.java](src/ConsoleGame/ConsoleGame.java) to create a Bingo Card from a set. The Bingo Card will then be printed to the console and you can mark off the fields as prompted.
+
+### Printing
+
+In the class [Printing.java](src/BingoParts/Printing.java) there are three methods for creating PDFs from either a specified Bingo Card or newly created ones. The generated PFDs will be placed in the compiled counterpart to [PrintOutput](src/BingoParts/PrintOutput), in the folder "bin/BingoParts/PrintOutput".  
+The PDF generation utilizes the [PDFBox library by apache commons](https://pdfbox.apache.org/).
 
 ## Roadmap
 
 - [x] Basic functionality
 - [x] Printing to console
 - [x] Console bingo game
-- [ ] Printing to PDF
+- [x] Printing to PDF
 - [ ] GUI for easily creating sets and printing cards
 
 ## Contact
