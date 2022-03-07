@@ -24,21 +24,31 @@ public class Printing {
     private Printing(){}
 
     /**
-     * Formats the BingoCard for console printing, using {@code formatForConsoleOutput()}. Leaves out whether the BingoTiles are marked off.
+     * Formats the BingoCard for console printing, using {@code formatForConsoleOutput()}. 
+     * Leaves out whether the BingoTiles are marked off.
      * @param card the BingoCard to format
      * @return a formatted String, ready for console printing
      */
     public static String toConsolePrint(BingoCard card){
-        return formatForConsoleOutput(Arrays.stream(card.getTiles()).map(a -> Arrays.stream(a).map(t -> t.getText().replaceAll(" ", "\n")).toArray(String[]::new)).toArray(String[][]::new));
+        return formatForConsoleOutput(Arrays.stream(card.getTiles())
+                                            .map(a -> Arrays.stream(a)
+                                                            .map(t -> t.getText().replaceAll(" ", "\n"))
+                                                            .toArray(String[]::new))
+                                            .toArray(String[][]::new));
     }
 
     /**
-     * Formats the BingoCard for console output, using {@code formatForConsoleOutput()}, also displaying which BingoTiles have been marked off
+     * Formats the BingoCard for console output, using {@code formatForConsoleOutput()}, 
+     * also displaying which BingoTiles have been marked off
      * @param card the BingoCard to format
      * @return a formatted String, ready for console output
      */
     public static String toConsoleOutput(BingoCard card){
-        return formatForConsoleOutput(Arrays.stream(card.getTiles()).map(a -> Arrays.stream(a).map(t -> t.toString().replaceAll(" ", "\n")).toArray(String[]::new)).toArray(String[][]::new));
+        return formatForConsoleOutput(Arrays.stream(card.getTiles())
+                                            .map(a -> Arrays.stream(a)
+                                                            .map(t -> t.toString().replaceAll(" ", "\n"))
+                                                            .toArray(String[]::new))
+                                            .toArray(String[][]::new));
     }
 
     /**

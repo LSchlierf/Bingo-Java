@@ -76,7 +76,8 @@ public class BingoCard {
     }
 
     /**
-     * Evaluates whether this BingoCard has been completely solved, whether it be vertically, horizontally, or diagonally.
+     * Evaluates whether this BingoCard has been completely solved, 
+     * whether it be vertically, horizontally, or diagonally.
      * @return {@code true} if this BingoCard is completely solved, {@code false} otherwise
      */
     public boolean isCompleted(){
@@ -164,7 +165,9 @@ public class BingoCard {
 
     @Override
     public String toString() {
-        return "BingoCard\nSize: " + getSize() + (isCompleted() ? "\nFinished" : "\nNot finished, " + numMarkedOff() +  " marked off");
+        return "BingoCard\nSize: " 
+                + getSize() 
+                + (isCompleted() ? "\nFinished" : "\nNot finished, " + numMarkedOff() +  " marked off");
     }
 
     /**
