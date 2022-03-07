@@ -61,8 +61,12 @@ public class Printing {
             }
             return newArray;
         });
-        int maxLines = 1 + Arrays.stream(allTexts).mapToInt(s -> s.length() - s.replaceAll("\n", "").length()).max().getAsInt();
-        int maxRows = Arrays.stream(allTexts).mapToInt(s -> Arrays.stream(s.split("\n")).mapToInt(w -> w.length()).max().getAsInt()).max().getAsInt();
+        int maxLines = 1 + Arrays.stream(allTexts).mapToInt(
+                                        s -> s.length() - s.replaceAll("\n", "").length()
+                                        ).max().getAsInt();
+        int maxRows = Arrays.stream(allTexts).mapToInt(
+                                        s -> Arrays.stream(s.split("\n")).mapToInt(w -> w.length()).max().getAsInt()
+                                        ).max().getAsInt();
         lineSeparator.append("├");
         for(int i = 0; i < texts.length; i++){
             for(int j = 0; j < maxRows; j++){
@@ -130,7 +134,8 @@ public class Printing {
         contentStream.endText();
         contentStream.close();
 
-        document.save(Printing.class.getClassLoader().getResource("BingoParts/PrintOutput").getPath() + "/BingoCard-" + System.currentTimeMillis() + ".pdf");
+        document.save(Printing.class.getClassLoader().getResource("BingoParts/PrintOutput").getPath()
+                                                    + "/BingoCard-" + System.currentTimeMillis() + ".pdf");
         document.close();
     }
 
@@ -175,7 +180,8 @@ public class Printing {
 
         contentStream.close();
 
-        document.save(Printing.class.getClassLoader().getResource("BingoParts/PrintOutput").getPath() + "/" + setName + "-BingoCards-" + System.currentTimeMillis() + ".pdf");
+        document.save(Printing.class.getClassLoader().getResource("BingoParts/PrintOutput").getPath()
+                                                    + "/" + setName + "-BingoCards-" + System.currentTimeMillis() + ".pdf");
         document.close();
     }
     
