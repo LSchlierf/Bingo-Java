@@ -146,7 +146,7 @@ public class BingoCard {
         String[][] texts = new String[size][size];
         for(int i = 0; i < size; i++){
             for(int j = 0; j < size; j++){
-                texts[i][j] = lines.get(0);
+                texts[i][j] = lines.get(new Random(System.currentTimeMillis()).nextInt(lines.size()));
                 lines.remove(texts[i][j]);
             }
         }
