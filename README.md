@@ -24,6 +24,7 @@ The PDF generation utilizes the [PDFBox library by Apache](https://pdfbox.apache
 - [x] Printing to console
 - [x] Console bingo game
 - [x] Printing to PDF
+- [ ] Good formatting for free space
 - [ ] GUI for easily creating sets and printing cards
 
 ## Contact
