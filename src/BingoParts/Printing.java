@@ -59,7 +59,7 @@ public class Printing {
      * @param texts the Strings to print, should be a square Array.
      * @return a formatted String, ready for console printing.
      */
-    protected static String formatForConsoleOutput(String[][] texts){ //TODO: merge together words that dont succeed maxrows
+    protected static String formatForConsoleOutput(String[][] texts){
         StringBuilder lineSeparator = new StringBuilder();
         String[] allTexts = Arrays.stream(texts).reduce(new String[0], (a, b) -> mergeTwoArrays(a, b));
         int maxRows = Arrays.stream(allTexts).mapToInt(
@@ -244,7 +244,9 @@ public class Printing {
         contentStream.close();
 
         document.save(Printing.class.getClassLoader().getResource("BingoParts/PrintOutput").getPath()
-                                                    + "/" + setName + "-BingoCards-" + System.currentTimeMillis() + ".pdf");
+                                                    + "/" + setName + "-BingoCards-Size"
+                                                    + size + "-"
+                                                    + System.currentTimeMillis() + ".pdf");
         document.close();
     }
 
