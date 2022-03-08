@@ -1,4 +1,4 @@
-# Code for Creating and printing Bingo cards from txt files
+# Code for Creating and printing Buzzword Bingo cards from txt files
 
 [![wakatime](https://wakatime.com/badge/user/ee0b2e88-680b-47cf-ba7c-afd0e1637329/project/8d1fab99-001f-4cb1-a383-164c986c486e.svg)](https://wakatime.com/badge/user/ee0b2e88-680b-47cf-ba7c-afd0e1637329/project/8d1fab99-001f-4cb1-a383-164c986c486e)
 
@@ -6,7 +6,7 @@
 
 ### General
 
-This code allows you to create and print Bingo cards from txt files. To create a Bingo card, the code uses the entries form the txt files in the [corresponding folder](src/BingoParts/Sets). In there, you will find an [example txt file](src/BingoParts/Sets/example.txt) for demonstration purposes. It contains the numbers 1 through 30, however the actual entries can be anything you want, including events that might happen.  
+This code allows you to create and print [Buzzowrd Bingo](https://wikipedia.org/wiki/Buzzword_bingo) cards from txt files. To create a Bingo card, the code uses the entries form the txt files in the [corresponding folder](src/BingoParts/Sets). In there, you will find an [example txt file](src/BingoParts/Sets/example.txt) for demonstration purposes. It contains the numbers 1 through 30, however the actual entries can be anything you want.  
 I also provided two ways to mark them off:
 
 ### ConsoleGame
