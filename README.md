@@ -6,7 +6,7 @@
 
 ### General
 
-This code allows you to create and print [Buzzowrd Bingo](https://wikipedia.org/wiki/Buzzword_bingo) cards from txt files. To create a Bingo card, the code uses the entries form the txt files in the [corresponding folder](src/BingoParts/Sets). In there, you will find an [example txt file](src/BingoParts/Sets/example.txt) for demonstration purposes. It contains the numbers 1 through 30, however the actual entries can be anything you want.  
+This code allows you to create and print [Buzzowrd Bingo](https://wikipedia.org/wiki/Buzzword_bingo) cards from txt files. To create a Bingo card, the code uses the entries form the txt files in the [corresponding folder](src/BingoParts/Sets). In there, you will find an [example txt file](src/BingoParts/Sets/example.txt) for demonstration purposes. It contains the numbers 1 through 50, however the actual entries can be anything you want.  
 I also provided two ways to mark them off:
 
 ### ConsoleGame
