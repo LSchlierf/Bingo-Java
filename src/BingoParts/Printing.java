@@ -459,6 +459,24 @@ public class Printing {
                 int size = Integer.parseInt(args[2]);
                 String path = args[3];
                 boolean addFreeTile = true;
+                if(size < 3){
+                    System.out.println("Minimum size is 3.");
+                    return;
+                }
+                if(!BingoSets.getAllNames().contains(setName)){
+                    System.out.println("The set '" + setName + "' was not found.");
+                    System.out.println("Available sets:");
+                    for(String s : BingoSets.getAllNames()){
+                        System.out.println(s);
+                    }
+                    return;
+                }
+                int max = (int)Math.sqrt(BingoSets.getSet(setName).size());
+                if(size > max){
+                    System.out.println("Size " + size + " is too big.");
+                    System.out.println("Please use a size between 3 and " + max + " for this set.");
+                    return;
+                }
                 if (args.length > 4 && args[4].equals("--no-free-tile"))
                     addFreeTile = false;
                 if (args[0].matches("(?i)one")) {
