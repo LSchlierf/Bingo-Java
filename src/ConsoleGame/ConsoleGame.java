@@ -10,36 +10,37 @@ import BingoParts.*;
  */
 public class ConsoleGame {
     /**
-     * Launches a simple console version of a bingo game. You can mark off fields as prompted.
+     * Launches a simple console version of a bingo game. You can mark off fields as
+     * prompted.
      */
     public static void main(String[] args) {
         BingoCard playingCard;
         int i = 0;
         int chosen;
         System.out.println("Available sets:\n");
-        for(String n : BingoSets.getAllNames()){
+        for (String n : BingoSets.getAllNames()) {
             System.out.println(++i + ": " + n);
         }
-        try(Scanner scan = new Scanner(System.in)) {
+        try (Scanner scan = new Scanner(System.in)) {
             chosen = scan.nextInt() - 1;
-            while(chosen >= BingoSets.getAllNames().size() || chosen < 0){
+            while (chosen >= BingoSets.getAllNames().size() || chosen < 0) {
                 System.out.println("\nChoose one of the available sets:\n");
                 i = 0;
-                for(String n : BingoSets.getAllNames()){
+                for (String n : BingoSets.getAllNames()) {
                     System.out.println(++i + ": " + n);
                 }
                 chosen = scan.nextInt();
             }
-            playingCard = BingoCard.createFromSet(BingoSets.getAllNames().get(chosen), 3);
+            playingCard = BingoCard.createFromSet(BingoSets.getAllNames().get(chosen), 3, false);
             System.out.println("\nYou chose: " + BingoSets.getAllNames().get(chosen));
-            while(!playingCard.isCompleted()){
+            while (!playingCard.isCompleted()) {
                 System.out.println(playingCard.toConsoleOutput());
                 System.out.println("Select the Field you want to mark off:");
                 System.out.println("X: ");
                 int x = scan.nextInt();
                 System.out.println("Y: ");
                 int y = scan.nextInt();
-                if(x < 1 || y < 1 || x > playingCard.getSize() || y > playingCard.getSize()){
+                if (x < 1 || y < 1 || x > playingCard.getSize() || y > playingCard.getSize()) {
                     System.out.println("Please select a value between 1 and " + playingCard.getSize());
                     continue;
                 }
@@ -51,5 +52,5 @@ public class ConsoleGame {
             e.printStackTrace();
         }
     }
-    
+
 }

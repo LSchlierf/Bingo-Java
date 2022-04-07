@@ -2,6 +2,7 @@ package BingoParts;
 
 /**
  * This represents a BingoField that is always marked off.
+ * 
  * @author Lucas Schlierf
  */
 public class FreeBingoTile extends BingoTile {
@@ -9,8 +10,8 @@ public class FreeBingoTile extends BingoTile {
     /**
      * Creates a BingoField that displays the text "FREE" and is always marked off.
      */
-    public FreeBingoTile(){
-        super("FREE");
+    public FreeBingoTile() {
+        super("FREE SPACE");
     }
 
     @Override
@@ -20,6 +21,6 @@ public class FreeBingoTile extends BingoTile {
 
     @Override
     public String toString() {
-        return "FREE";
+        return "FREE SPACE";
     }
 }

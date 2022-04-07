@@ -1,7 +1,9 @@
 package BingoParts;
 
 /**
- * This represents a single field on a BingoCard that can be marked off as solved.
+ * This represents a single field on a BingoCard that can be marked off as
+ * solved.
+ * 
  * @author Lucas Schlierf
  */
 public class BingoTile {
@@ -9,10 +11,12 @@ public class BingoTile {
     private boolean markedOff;
 
     /**
-     * Creates a new BingoTile with the specified text and marks it as not yet solved.
+     * Creates a new BingoTile with the specified text and marks it as not yet
+     * solved.
+     * 
      * @param text the text for the BingoTile
      */
-    public BingoTile(String text){
+    public BingoTile(String text) {
         this.text = text;
         markedOff = false;
     }
@@ -25,7 +29,7 @@ public class BingoTile {
         return markedOff;
     }
 
-    public void markOff(){
+    public void markOff() {
         markedOff = true;
     }
 
