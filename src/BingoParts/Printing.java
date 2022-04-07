@@ -1,5 +1,6 @@
 package BingoParts;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -251,8 +252,8 @@ public class Printing {
 
     /**
      * Creates six new BingoCards with size 3 from the specified BingoSet, and then
-     * creates a new PDF from them.
-     * Defaults to size 3, using a free tile if possible, and the standard output path.
+     * creates a new PDF from them. Defaults to size 3, using a free tile if
+     * possible, and the standard output path.
      * 
      * @param setName the BingoSet to use for the BingoCards
      * @throws IOException if an IO exception occurs while creating the PDF
@@ -263,8 +264,8 @@ public class Printing {
 
     /**
      * Creates six new BingoCards with the specified size form the specified
-     * BingoSet, an then creates a new PDF from them.
-     * Defaults to using a free tile if possible, and the standard output path.
+     * BingoSet, an then creates a new PDF from them. Defaults to using a free tile
+     * if possible, and the standard output path.
      * 
      * @param setName the BingoSet to use for the BingoCards
      * @param size    the size for the BingoCards
@@ -276,8 +277,8 @@ public class Printing {
 
     /**
      * Creates six new BingoCards with the specified size form the specified
-     * BingoSet, an then creates a new PDF from them.
-     * Defaults to the standard output path.
+     * BingoSet, an then creates a new PDF from them. Defaults to the standard
+     * output path.
      * 
      * @param setName     the BingoSet to use for the BingoCards
      * @param size        the size for the BingoCards
@@ -455,26 +456,50 @@ public class Printing {
             }
         } else {
             try {
-                String setName = args[1];
-                int size = Integer.parseInt(args[2]);
-                String path = args[3];
-                boolean addFreeTile = true;
-                if(size < 3){
-                    System.out.println("Minimum size is 3.");
-                    return;
-                }
-                if(!BingoSets.getAllNames().contains(setName)){
-                    System.out.println("The set '" + setName + "' was not found.");
-                    System.out.println("Available sets:");
-                    for(String s : BingoSets.getAllNames()){
+                if (args.length < 2) {
+                    System.out.println("Please specify the BingoSet you want to use.");
+                    System.out.println("Available BingoSets:");
+                    for (String s : BingoSets.getAllNames()) {
                         System.out.println(s);
                     }
                     return;
                 }
-                int max = (int)Math.sqrt(BingoSets.getSet(setName).size());
-                if(size > max){
+                if (args.length < 3) {
+                    System.out.println("Please provide a size for the BingoCards.");
+                    return;
+                }
+                if (args.length < 4) {
+                    System.out.println("Please provide a path to save the PDF to.");
+                    return;
+                }
+                String setName = args[1];
+                int size = Integer.parseInt(args[2]);
+                String path = args[3];
+                boolean addFreeTile = true;
+                if (size < 3) {
+                    System.out.println("Minimum size is 3.");
+                    return;
+                }
+                if (!BingoSets.getAllNames().contains(setName)) {
+                    System.out.println("The set '" + setName + "' was not found.");
+                    System.out.println("Available sets:");
+                    for (String s : BingoSets.getAllNames()) {
+                        System.out.println(s);
+                    }
+                    return;
+                }
+                int max = (int) Math.sqrt(BingoSets.getSet(setName).size());
+                if (size > max) {
                     System.out.println("Size " + size + " is too big.");
                     System.out.println("Please use a size between 3 and " + max + " for this set.");
+                    return;
+                }
+                if (!new File(path).exists()) {
+                    System.out.println("The path you specified doesn't exist.");
+                    return;
+                }
+                if (!new File(path).isDirectory()) {
+                    System.out.println("The path you specified isn't a directory.");
                     return;
                 }
                 if (args.length > 4 && args[4].equals("--no-free-tile"))
@@ -492,7 +517,6 @@ public class Printing {
             } catch (Exception e) {
                 System.out.println("Usage: 'one'|'six', setName, size, path, [--no-free-tile]");
             }
-
         }
     }
 
