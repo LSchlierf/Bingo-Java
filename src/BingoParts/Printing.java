@@ -19,8 +19,8 @@ import org.apache.pdfbox.pdmodel.font.PDType1Font;
  */
 public class Printing {
 
-    private static final int[] X_VALUES = { 20, 320 };
-    private static final int[] Y_VALUES = { 770, 510, 250 };
+    private static final int[] X_VALUES = { 30, 330 };
+    private static final int[] Y_VALUES = { 750, 485, 220 };
     private static final int PAGE_SIZE_X = 550;
     private static final int PAGE_SIZE_Y = 780;
 
@@ -329,6 +329,9 @@ public class Printing {
         PDFont font = PDType1Font.COURIER;
 
         PDPageContentStream contentStream = new PDPageContentStream(document, page);
+
+        addBarriers(contentStream);
+
         contentStream.setFont(font, fontSize);
 
         for (int i = 0; i < 6; i++) {
@@ -356,6 +359,28 @@ public class Printing {
                 max = i;
         }
         return max;
+    }
+
+    private static void addBarriers(PDPageContentStream contentStream) throws IOException{
+        contentStream.setFont(PDType1Font.COURIER, 10);
+
+        contentStream.beginText();
+        contentStream.newLineAtOffset(0, 264);
+        contentStream.showText("-");
+        contentStream.newLineAtOffset(0, 264);
+        contentStream.showText("-");
+        contentStream.newLineAtOffset(605, 0);
+        contentStream.showText("-");
+        contentStream.newLineAtOffset(0, -264);
+        contentStream.showText("-");
+        contentStream.endText();
+
+        contentStream.beginText();
+        contentStream.newLineAtOffset(300, 2);
+        contentStream.showText("|");
+        contentStream.newLineAtOffset(0, 782);
+        contentStream.showText("|");
+        contentStream.endText();
     }
 
     public static void main(String[] args) {
@@ -515,6 +540,7 @@ public class Printing {
                 }
 
             } catch (Exception e) {
+                e.printStackTrace();
                 System.out.println("Usage: 'one'|'six', setName, size, path, [--no-free-tile]");
             }
         }
